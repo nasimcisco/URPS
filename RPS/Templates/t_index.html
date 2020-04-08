@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body> 
+	<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">CIIS</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+      <li class="active"><a href="/t_index">Home</a></li>
+      <li><a href="/t_universal/internal">Internal</a></li>
+      <li><a href="/t_universal/external">External</a></li>
+      <li><a href="/t_universal/tabulator">Tabulator</a></li>
+      <li><a href="/t_universal/scrutinizer">Scrutinizer</a></li>
+      <li><a href="/t_universal/decoder">Decoder</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+ 
+<div class="container">
+
+  <div class="row">
+
+ 
+  
+
+  
+	 		{% for result in l %}
+<div class="col-sm-4"><img src="http://localhost:5000/static/{{ result['filename'] }} " alt="" height="300" width="300">
+</div>
+<div class="col-sm-4 panel panel-default panel-body">
+	<br><strong>Name : {{ result['name']}}</strong> 
+	
+	<br><strong>Mobile : {{ result['mobile']}}</strong> 
+	<br><strong>Email : {{result['email']}}</strong>
+	 <br><strong>Department : {{result['department']}}</strong> 
+	 <br><strong>Faculty : {{ result['faculty']}}</strong>
+	
+	 <br><strong>NID : {{ result['nid']}}</strong>
+	 <br><strong>Address : {{result['address']}}</strong>
+	
+	 <br>
+
+{% endfor %}
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html>

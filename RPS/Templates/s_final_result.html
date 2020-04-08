@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+   <body>
+  <nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">CIIS</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+      <li class="active"><a href="/s_index">Home</a></li>
+      <li><a href="/s_admit">Admit Card Download</a></li>
+      <li><a href="/d_final_result">Result</a></li>
+      <li><a href="/localhost">E-learning</a></li>
+      <li><a href="/localhost:81">Q-bank</a></li>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+   		
+   		{% for k,v in d.items() %}
+      <h3>{{k.capitalize() }} : {{v.capitalize()}}</h3>
+      {% endfor %}
+   		<br>
+   		<br>
+
+      <table class="table table-bordered" >
+        <tr>
+          <th><h4>Course</h4></th>
+          <th><h4>Code</h4></th>
+          <th><h4>Credit</h4></th>
+          <th><h4>Grade</h4></th>
+          <th><h4>Point</h4></th>
+         
+        </tr>
+
+      	{% for result in l %}
+        
+            <tr>
+             
+              <th><h4>{{result['course'].capitalize() }}</h4></th>
+              <th><h4>{{result['coursecode']}}</h4></th>
+              <th><h4>{{result['credit']}}</h4></th>
+              <th><h4>{{result['grade']}}</h4></th>
+              <th><h4>{{result['point']}}</h4></th>      
+      
+       
+            </tr>
+         
+         {% endfor %}
+      </table>
+
+      <h4>Credit hours Earned this semester : {{ sum1 }}</h4>
+      <h4>Semester GPA : {{ sum2 }}</h4>
+    
+
+ 
+   </body>
+</html>

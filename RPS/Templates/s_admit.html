@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Admit Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body> 
+
+
+ 
+<div class="container">
+     <div class="jumbotron text-center">
+     <img src="/static/logo-1.png" alt="" height="100" width="100">
+    <h3> Chittagong Veterinary & Animal Sciences University</h3>
+    <h3>Admit Card</h3>
+  </div>
+ 
+     
+  <div class="row">
+    
+    
+ 
+  
+ 
+  
+	 		{% for result in l %}
+<div class="col-sm-4 " ><img src="http://localhost:5000/static/{{ result['filename'] }} " alt="" height="300" width="300">
+</div>
+<div class="col-sm-4 panel panel-default panel-body">
+	<br><strong>Name : {{ result['name'].capitalize()}}</strong> 
+	<br><strong>Roll : {{ result['roll']}}</strong> 
+  <br><strong>Faculty : {{result['department'].capitalize()}}</strong> 
+	<br><strong>Session : {{ result['session']}}</strong>
+	
+	
+	 <br>
+
+{% endfor %}
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></head>
+   <body>
+   	<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">CIIS</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+      <li class="active"><a href="/d_index">Home</a></li>
+      <li><a href="/d_alldata">Course list</a></li>
+      <li><a href="/d_reg">Add Course</a></li>
+      <li><a href="/d_alldata">Edit Course</a></li>
+    </ul>
+  </div>
+</nav>
+
+   		
+   		
+   		<br>
+   		<br>
+
+      <table class="table table-bordered" >
+        <tr>
+          <th>Course</th>
+          <th>Code</th>
+          <th>Session</th>
+          <th>Department</th>
+          <th>Credit</th>
+          <th>Internal</th>
+          
+          <th>External</th>
+          
+          <th>Tabulator</th>
+        
+          <th>Scrutinizer</th>
+          
+          <th>Decoder </th>
+          <th>Document</th>
+         
+        </tr>
+
+      	{% for result in l %}
+        
+            <tr>
+             
+              <th>{{result['course']}}</th>
+              <th><a href="/d_edit/{{result['coursecode']}}">{{result['coursecode']}}</a></th>
+              <th>{{result['session']}}</th>
+              <th>{{result['department']}}</th>
+              <th>{{result['credit']}}</th>
+              <th>{{result['internal']}} <br>{{result['internalemail']}}</th>
+              
+              <th>{{result['external']}} <br>{{result['externalemail']}}</th>
+             
+            <th>{{result['tabulator']}} <br>{{result['tabulatoremail']}}</th>
+            
+        <th>{{result['scrutinizer']}} <br>{{result['scrutinizeremail']}}</th>
+             
+        <th>{{result['decoder']}} <br>{{result['decoderemail']}}</th>
+        <th>{{result['authority']}}</th>
+       
+            </tr>
+         
+         {% endfor %}
+      </table>
+    
+
+ 
+   </body>
+</html>

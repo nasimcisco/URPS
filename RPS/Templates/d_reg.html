@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Student Registration Page</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">CIIS</a>
+    </div>
+    <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+      <li class="active"><a href="/d_index">Home</a></li>
+      <li><a href="/d_alldata">course list</a></li>
+      <li><a href="/d_reg">Add course</a></li>
+      <li><a href="/d_alldata">Edit course</a></li>
+    </ul>
+  </div>
+</nav>
+	
+<form action = "/d_reg" method = "POST"  enctype = "multipart/form-data">
+	 	<div class="container">
+	 		<div class="jumbotron text-center">
+		<h1>CVASU Result Automation</h1>
+	</div>
+	 		<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Course</strong> <br>
+	 			<input type="text" name="course" placeholder="course name" size="50" required="">
+	 			</div>
+	 		</div>
+	 			<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Course code number</strong> <br>
+	 			<input type="text" name="coursecode" placeholder="course code" size="50" required="">
+	 			</div>
+	 		</div>
+	 		     <br>
+        	<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>session</strong> <br>
+	 			<input type="text" name="session" placeholder="course session" size="50" required="">
+	 			</div>
+	 		</div>
+	 	 
+	 	    <br>
+        	<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Department :</strong>
+	 				<select name="department" id="" required="">
+	 					<option value="">None</option>
+	 					{% for s1 in s %}
+	 					<option value="{{s1}}">{{s1}}</option>
+	 					{% endfor %}
+	 				
+	 			    </select>
+	 			</div>
+
+	 		</div>
+         
+	 		  <br>
+        	<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Credit :</strong>
+	 				<select name="credit" id="" required="" >
+	 					<option value="">None</option>
+	 					<option value="1">1</option>
+	 					<option value="2">2</option>
+	 					<option value="3">3</option>
+	 				</select>
+	 			</div>
+	 		</div>
+	 	
+	 			<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Internal :</strong>
+	 				<select name="internal" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result1 in ll %}
+	 					<option value="{{result1}}">{{result1}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 		<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Internal Email :</strong>
+	 				<select name="internalemail" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result2 in lll %}
+	 					<option value="{{result2}}">{{result2}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 			<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>External :</strong><br>
+	 			<input type="text" name="external" placeholder="External" size="50" required="">
+	 			</div>
+	 		</div>
+	 			<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>External Email :</strong><br>
+	 			<input type="email" name="externalemail" placeholder="External" size="50" required="">
+	 			</div>
+	 		</div>
+	 		
+	 			<br>
+	 		<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Tabulator :</strong>
+	 				<select name="tabulator" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result3 in ll %}
+	 					<option value="{{result3}}">{{result3}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 			<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Tabulator Email :</strong>
+	 				<select name="tabulatoremail" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result4 in lll %}
+	 					<option value="{{result4}}">{{result4}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+          	<br>
+	 		
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Scrutinizer :</strong>
+	 				<select name="scrutinizer" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result5 in ll %}
+	 					<option value="{{result5}}">{{result5}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 		<br>
+	 			
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Scrutinizer Email :</strong>
+	 				<select name="scrutinizeremail" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result6 in lll %}
+	 					<option value="{{result6}}">{{result6}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 			<br>
+	 		
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Decoder :</strong>
+	 				<select name="decoder" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result7 in ll %}
+	 					<option value="{{result7}}">{{result7}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 			<br>
+	 				<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Decoder Email :</strong>
+	 				<select name="decoderemail" id="" required="">
+	 					<option value="">None</option>
+	 					
+	 					{% for result8 in lll %}
+	 					<option value="{{result8}}">{{result8}}</option>
+	 					{% endfor %}
+	 				</select>
+	 			</div>
+	 		</div>
+	 		<br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4"><strong>Authority Approval Document Number :</strong><br>
+	 			<input type="text" name="authority" placeholder="document number" size="50" required="">
+	 			</div>
+	 		</div>
+            <br>
+	 			<div class="row">
+	 			<div class="col-sm-4"></div>
+	 			<div class="col-sm-4">
+	 		<button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+	 			</div>
+	 		</div>
+            <br>
+            <br>
+      
+
+	 	</div>
+	 </form>
+</body>
+</html>
